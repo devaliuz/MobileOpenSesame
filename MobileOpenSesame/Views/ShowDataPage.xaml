@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit ="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MobileOpenSesame.Views.ShowDataPage">
+    <ScrollView>
+        <Frame BackgroundColor="Transparent">
+            <StackLayout HorizontalOptions="CenterAndExpand" Spacing="10" Margin="10,0,0,0">
+                <Frame Padding="0,0,0,0" BackgroundColor="#E5D0E3">
+                    <HorizontalStackLayout Spacing="20">
+                        <Button x:Name = "btnCancel" Text="Zurück" Clicked="btnCancel_Clicked" HorizontalOptions="Start"  WidthRequest="100" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                        <Button x:Name = "btnDelete" Text="Löschen" Clicked="btnDelete_Clicked" HorizontalOptions="Center" WidthRequest="100" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                        <Button x:Name = "btnEdit" Text="Bearbeiten" Clicked="btnEdit_Clicked" HorizontalOptions="End" WidthRequest="100" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="5,0,0,0" BackgroundColor="Transparent">
+                    <HorizontalStackLayout Spacing="5" >
+                        <Label Text="Service: " VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" FontAttributes="Bold" TextColor="Black"/>
+                        <Entry x:Name="txtService" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="140" FontAttributes="Bold" TextColor="Black">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior x:Name="valService" MinimumLength="1" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Button x:Name="btnService" Text="Öffnen" Clicked="btnService_Clicked" WidthRequest="90" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="5,0,0,0" BackgroundColor="Transparent">
+                    <HorizontalStackLayout Spacing="5" >
+                        <Label Text="Benutzername: " VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" FontAttributes="Bold" TextColor="Black"/>
+                        <Entry x:Name="txtUsername" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="140" FontAttributes="Bold" TextColor="Black">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior x:Name="valUser" MinimumLength="1" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Button x:Name="btnUsername" Text="Kopieren" Clicked="btnUsername_Clicked" WidthRequest="90" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="5,0,0,0" BackgroundColor="Transparent">
+                    <HorizontalStackLayout Spacing="5" >
+                        <Label Text="Email: " VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" FontAttributes="Bold" TextColor="Black"/>
+                        <Entry x:Name="txtMail" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="140" FontAttributes="Bold" TextColor="Black">
+                            <Entry.Behaviors>
+                                <toolkit:MultiValidationBehavior>
+                                    <toolkit:TextValidationBehavior x:Name="valMail" MinimumLength="1" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                                    <toolkit:EmailValidationBehavior x:Name="valMailformat" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                                </toolkit:MultiValidationBehavior>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Button x:Name="btnMail" Text="Kopieren" Clicked="btnMail_Clicked" WidthRequest="90" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="5,0,0,0" BackgroundColor="Transparent">
+                    <HorizontalStackLayout Spacing="15" >
+                        <Label Text="Kategorie: " VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" FontAttributes="Bold" TextColor="Black"/>
+                        <Entry x:Name="txtCategory" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="5,0,0,5" BackgroundColor="Transparent">
+                    <HorizontalStackLayout Spacing="15" >
+                        <Entry x:Name="txtNote" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="320" Placeholder="Notizen" FontAttributes="Bold" TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Padding="0,0,0,0" BackgroundColor="Transparent">
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="5" >
+                            <Label></Label>
+                            <Label Text="Passwort: " VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" FontAttributes="Bold" TextColor="Black"/>
+                            <Entry x:Name="txtPassword" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="140" FontAttributes="Bold" TextColor="Black">
+                                <Entry.Behaviors>
+                                    <toolkit:MultiValidationBehavior>
+                                        <toolkit:TextValidationBehavior x:Name="valPassword1" MinimumLength="1" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                                        <toolkit:TextValidationBehavior x:Name="valPassword8" MinimumLength="8" Flags="ValidateOnAttaching,ValidateOnValueChanged"/>
+                                    </toolkit:MultiValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+                            <Button x:Name="btnPassword" Text="Kopieren" Clicked="btnPassword_Clicked" WidthRequest="90" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="60">
+                            <Button x:Name = "btnShow" Text="Anzeigen" Clicked="btnShow_Clicked" HorizontalOptions="Start" WidthRequest="140" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                            <Button x:Name = "btnCreate" Text="Erstellen" Clicked="btnCreate_Clicked" HorizontalOptions="End" IsVisible="False" WidthRequest="140" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</ContentPage>

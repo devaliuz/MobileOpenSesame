@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileOpenSesame.Views.SettingsPage"
+             Title="Einstellungen">
+    <ScrollView>
+        <VerticalStackLayout Padding="5,5,5,5" Spacing="10">
+            <HorizontalStackLayout Padding="5,5,5,30" Spacing="20">
+                <Button x:Name = "btnCancel" Text="Zurück" Clicked="btnCancel_Clicked" HorizontalOptions="Start"  WidthRequest="100" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+            </HorizontalStackLayout>
+            <Button x:Name="btnDelDB" Text="Datenbank löschen" Clicked="btnDelDB_Clicked"/>
+            <Button x:Name="btnImportDB" Text="Datenbank laden" Clicked="btnImportDB_Clicked"/>
+            <Button x:Name="btnExportDB" Text="Datenbank extern sichern." Clicked="btnExportDB_Clicked"/>
+            <!--<Label HorizontalOptions="Center" Text="Farbtheme wählen" FontSize="Large"/>
+            <Picker x:Name="pickTheme" SelectedIndexChanged="pickTheme_SelectedIndexChanged" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" MaximumWidthRequest="150" MaximumHeightRequest="50"/>
+            <Button x:Name="btnSaveTheme" Text="Theme speichern" Clicked="btnSaveTheme_Clicked"/>-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileOpenSesame.Views.LoginDataPage"
+             >
+    <ScrollView>
+        <Frame BackgroundColor="Transparent" Padding="5,5,5,5">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+                <HorizontalStackLayout>
+                    <SearchBar x:Name="searchbar" Placeholder="Suchen" WidthRequest="300" IsTextPredictionEnabled="True" TextChanged="searchbar_TextChanged"/>
+                    <ImageButton x:Name="btnSettings" HorizontalOptions="End" Source="gear.svg" MaximumHeightRequest="30" MaximumWidthRequest="30" Clicked="btnSettings_Clicked" BackgroundColor="LightSteelBlue" />
+
+                </HorizontalStackLayout>
+                <Button x:Name="btnNew" Text="Neue Zugangsdaten erstellen" Clicked="btnNew_Clicked" BackgroundColor="#A99ABD" FontAttributes="Bold" TextColor="Black"/>
+                <ListView
+                x:Name="DataList" 
+                HorizontalOptions="CenterAndExpand"
+                SeparatorColor="Wheat"
+                RowHeight="50"
+                ItemSelected="DataList_ItemSelected"
+                ItemTapped="DataList_ItemTapped"
+                WidthRequest="300"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell
+                            TextColor="Black"
+                            Text="{Binding Service}" 
+                            Detail="{Binding Username}"
+                            />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </VerticalStackLayout>
+        </Frame>
+    </ScrollView>
+</ContentPage>
